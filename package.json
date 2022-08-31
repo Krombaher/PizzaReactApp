@@ -1,5 +1,11 @@
 {
   "dependencies": {
     "sass": "^1.54.5"
+  },
+
+  "name": "my-package",
+  "scripts": {
+    "build": "babel src -d lib",
+    "prebuild": "jest"
   }
 }
