@@ -10,6 +10,8 @@ function Home() {
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
+  console.log(items);
+
   React.useEffect(() => {
     fetch('https://6310817d826b98071a4320b1.mockapi.io/items')
       .then((res) => res.json())
@@ -28,8 +30,8 @@ function Home() {
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">
         {isLoading
-          ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
-          : items.map((obj) => <Pizza key={obj.id} {...obj} />)
+          ? [...new Array(6)].map((_, index: number) => <Skeleton key={index} />)
+          : items.map((obj: any) => <Pizza key={obj.id} {...obj} />)
         }
       </div>
     </div>
